@@ -7,4 +7,9 @@ h1 {
   font-size: 4em;
   margin-bottom: 0;
   color: firebrick;
+  margin-top: 0;
+}
+
+.game-title {
+  padding-top: 0.25em;
 }
