@@ -5,6 +5,6 @@ export const BoardContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 500px;
-  height: 500px;
-  border: 0.5rem solid black;
+  height: 600px;
+  margin-bottom: 4em;
 `

@@ -5,7 +5,7 @@ import Board from './components/Board'
 function App() {
   return (
     <div className='App'>
-      <h1>Quarentine Bingo</h1>
+      <h1>Quarentine</h1>
       <Board />
     </div>
   )
