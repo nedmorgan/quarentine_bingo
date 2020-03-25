@@ -12,8 +12,8 @@ export default class Rules extends Component {
           <li>Once a number is called by the BINGO Jefe, click on the circle. Duh!</li>
           <li>Once you have all of the numbers in the row SCREAM OUT for all to know you are the WINNER and everyone else is a LOSER!</li>
           <li>
-            When you want to restart the game select the RESET button at the top right. If you select the RESET button while the game is currently in play it will reset the board and that ain't the
-            BINGO Jefe's fault. Don't be a fool.
+            When you want to restart the game select the RESET button. If you select the RESET button while the game is currently in play it will reset the board and that ain't the BINGO Jefe's fault.
+            Don't be a fool.
           </li>
         </ol>
       </RulesContainer>

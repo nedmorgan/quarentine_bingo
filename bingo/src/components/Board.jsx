@@ -5,6 +5,7 @@ import ICard from './ICard'
 import NCard from './NCard'
 import GCard from './GCard'
 import OCard from './OCard'
+import Reset from './Reset'
 
 const bNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
 const iNumbers = ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30']
@@ -56,15 +57,26 @@ export default class Board extends Component {
     this.setState({ selectedCards })
   }
 
+  resetGameBoard = e => {
+    e.preventDefault()
+    let resetNumbers = [...this.state.selectedCards]
+    resetNumbers = []
+    this.setState({ selectedCards: resetNumbers, displayNumbers: false })
+    this.componentDidMount()
+  }
+
   render() {
     return (
-      <BoardContainer>
-        <BCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.B} selected={this.isSelected} selectedCards={this.state.selectedCards} />
-        <ICard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.I} selected={this.isSelected} selectedCards={this.state.selectedCards} />
-        <NCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.N} selected={this.isSelected} selectedCards={this.state.selectedCards} />
-        <GCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.G} selected={this.isSelected} selectedCards={this.state.selectedCards} />
-        <OCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.O} selected={this.isSelected} selectedCards={this.state.selectedCards} />
-      </BoardContainer>
+      <div>
+        <Reset resetGame={this.resetGameBoard} />
+        <BoardContainer>
+          <BCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.B} selected={this.isSelected} selectedCards={this.state.selectedCards} />
+          <ICard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.I} selected={this.isSelected} selectedCards={this.state.selectedCards} />
+          <NCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.N} selected={this.isSelected} selectedCards={this.state.selectedCards} />
+          <GCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.G} selected={this.isSelected} selectedCards={this.state.selectedCards} />
+          <OCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.O} selected={this.isSelected} selectedCards={this.state.selectedCards} />
+        </BoardContainer>
+      </div>
     )
   }
 }

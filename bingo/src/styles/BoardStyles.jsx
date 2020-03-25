@@ -8,4 +8,11 @@ export const BoardContainer = styled.div`
   height: 600px;
   margin-bottom: 4em;
   justify-content: space-evenly;
+
+  @media only screen and (max-width: 600px) {
+    height: auto;
+    width: auto;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
 `
