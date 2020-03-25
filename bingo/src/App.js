@@ -6,7 +6,7 @@ import Rules from './components/Rules'
 function App() {
   return (
     <div className='App'>
-      <h1 className='game-title'>Quarentine</h1>
+      <h1 className='game-title'>Quarantine</h1>
       <Rules />
       <Board />
     </div>
