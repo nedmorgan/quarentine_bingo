@@ -34,7 +34,7 @@ export const CardContainer = styled.div`
   .cover-square {
     background-color: black;
     color: white;
-    animation: 0.5s ${fade};
+    animation: 0.6s ${fade};
   }
 
   @media only screen and (max-width: 600px) {
