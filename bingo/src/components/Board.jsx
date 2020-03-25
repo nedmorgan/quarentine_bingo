@@ -18,17 +18,44 @@ export default class Board extends Component {
     iGroup: iNumbers,
     nGroup: nNumbers,
     gGroup: gNumbers,
-    oGroup: oNumbers
+    oGroup: oNumbers,
+    gameCards: {},
+    displayNumbers: false
+  }
+
+  async componentDidMount() {
+    let bResponse = await this.getRandomNumber(bNumbers, 'B')
+    let iResponse = await this.getRandomNumber(iNumbers, 'I')
+    let nResponse = await this.getRandomNumber(nNumbers, 'N')
+    let gResponse = await this.getRandomNumber(gNumbers, 'G')
+    let oResponse = await this.getRandomNumber(oNumbers, 'O')
+    this.setState({ displayNumbers: true })
+  }
+
+  getRandomNumber = (arr, group) => {
+    let gameNumbers = []
+    for (let i = 0; i < 5; i++) {
+      let randomNumber = Math.floor(Math.random() * 15)
+      gameNumbers.push(arr[randomNumber])
+    }
+    const distinctNumbers = [...new Set(gameNumbers)]
+    if (distinctNumbers.length === 5) {
+      let gamePlay = { ...this.state.gameCards }
+      gamePlay[group] = gameNumbers
+      this.setState({ gameCards: gamePlay })
+    } else {
+      this.getRandomNumber(arr, group)
+    }
   }
 
   render() {
     return (
       <BoardContainer>
-        <BCard numbers={this.state.bGroup} />
-        <ICard numbers={this.state.iGroup} />
-        <NCard numbers={this.state.nGroup} />
-        <GCard numbers={this.state.gGroup} />
-        <OCard numbers={this.state.oGroup} />
+        <BCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.B} />
+        <ICard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.I} />
+        <NCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.N} />
+        <GCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.G} />
+        <OCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.O} />
       </BoardContainer>
     )
   }
