@@ -20,7 +20,8 @@ export default class Board extends Component {
     gGroup: gNumbers,
     oGroup: oNumbers,
     gameCards: {},
-    displayNumbers: false
+    displayNumbers: false,
+    selectedCards: []
   }
 
   async componentDidMount() {
@@ -48,14 +49,21 @@ export default class Board extends Component {
     }
   }
 
+  isSelected = (e, item) => {
+    e.preventDefault()
+    let selectedCards = [...this.state.selectedCards]
+    selectedCards.push(item)
+    this.setState({ selectedCards })
+  }
+
   render() {
     return (
       <BoardContainer>
-        <BCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.B} />
-        <ICard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.I} />
-        <NCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.N} />
-        <GCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.G} />
-        <OCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.O} />
+        <BCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.B} selected={this.isSelected} selectedCards={this.state.selectedCards} />
+        <ICard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.I} selected={this.isSelected} selectedCards={this.state.selectedCards} />
+        <NCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.N} selected={this.isSelected} selectedCards={this.state.selectedCards} />
+        <GCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.G} selected={this.isSelected} selectedCards={this.state.selectedCards} />
+        <OCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.O} selected={this.isSelected} selectedCards={this.state.selectedCards} />
       </BoardContainer>
     )
   }

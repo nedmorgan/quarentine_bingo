@@ -14,7 +14,11 @@ export default class ICard extends Component {
         <div className='card'>
           {this.props.displayNumbers ? (
             this.props.gameNumbers.map((num, i) => {
-              return <div className='game-square'>{num}</div>
+              return (
+                <div key={`I${i}`} onClick={e => this.props.selected(e, `I${i}`)} className={'game-square ' + (this.props.selectedCards.includes(`I${i}`) ? 'cover-square' : null)}>
+                  {num}
+                </div>
+              )
             })
           ) : (
             <Loader type='Oval' color='black' height={25} width={25} />
