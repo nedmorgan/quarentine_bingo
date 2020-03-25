@@ -34,12 +34,8 @@ export default class OCard extends Component {
         </div>
         <div className='card'>
           {this.state.displayNumbers ? (
-            this.state.gameNumbers.map(num => {
-              return (
-                <div className='game-square'>
-                  <p>{num}</p>
-                </div>
-              )
+            this.state.gameNumbers.map((num, i) => {
+              return <div className='game-square'>{num}</div>
             })
           ) : (
             <Loader type='Oval' color='black' height={25} width={25} />

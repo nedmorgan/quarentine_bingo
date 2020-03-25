@@ -15,14 +15,16 @@ export const CardContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
   }
 
   h1 {
     margin-top: 0;
   }
 
-  p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2em;
+  .cover-square {
+    background-color: black;
+    color: white;
   }
 `
