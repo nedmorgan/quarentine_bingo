@@ -6,9 +6,11 @@ import Rules from './components/Rules'
 function App() {
   return (
     <div className='App'>
-      <h1 className='game-title'>CORONAVIRUS</h1>
-      <Rules />
-      <Board />
+      <div className='game-objects'>
+        <div className='empty-div'></div>
+        <Board />
+        <Rules />
+      </div>
     </div>
   )
 }

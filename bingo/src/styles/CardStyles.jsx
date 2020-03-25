@@ -13,8 +13,8 @@ export const CardContainer = styled.div`
   }
 
   .game-square {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border: 0.25rem solid #0d355a;
     display: flex;
     justify-content: center;

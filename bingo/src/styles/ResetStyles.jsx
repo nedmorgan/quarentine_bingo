@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const ResetContainer = styled.div`
-  right: 0;
-  position: absolute;
-  margin-right: 4em;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 1em;
 
   .myButton {
     box-shadow: 0px 2px 0px 2px #9fb4f2;
@@ -37,5 +37,6 @@ export const ResetContainer = styled.div`
     justify-content: center;
     width: 100vw;
     padding-bottom: 1em;
+    position: inherit;
   }
 `

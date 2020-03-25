@@ -3,9 +3,8 @@ import styled from 'styled-components'
 export const RulesContainer = styled.div`
   width: 300px;
   height: auto;
-  position: absolute;
   font-family: 'Roboto', sans-serif;
-  margin-left: 2em;
+  margin-top: 7em;
 
   h2 {
     margin: 0;
@@ -21,7 +20,8 @@ export const RulesContainer = styled.div`
     bottom: 0;
     width: auto;
     margin-left: 0;
-    margin-bottom: 4em;
+    position: inherit;
+    margin-top: 0;
 
     ol {
       padding-left: 2em;
