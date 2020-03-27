@@ -59,10 +59,6 @@ export default class Board extends Component {
     this.setState({ gameCards: copyGameCards, selectedCards: copySelectedCards })
   }
 
-  checkFreeSpace = () => {
-    
-  }
-
   isSelected = (e, item) => {
     e.preventDefault()
     let selectedCards = [...this.state.selectedCards]
