@@ -13,8 +13,8 @@ export const CardContainer = styled.div`
   }
 
   .game-square {
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
     border: 0.25rem solid #0d355a;
     display: flex;
     justify-content: center;
@@ -46,7 +46,7 @@ export const CardContainer = styled.div`
     .game-square {
       width: 50px;
       height: 50px;
-      font-size: 25px;
+      font-size: 20px;
     }
   }
 `

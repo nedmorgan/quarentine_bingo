@@ -31,6 +31,7 @@ export default class Board extends Component {
     let nResponse = await this.getRandomNumber(nNumbers, 'N')
     let gResponse = await this.getRandomNumber(gNumbers, 'G')
     let oResponse = await this.getRandomNumber(oNumbers, 'O')
+    let updateFreeSapce = await this.setFreeSpace()
     this.setState({ displayNumbers: true })
   }
 
@@ -48,6 +49,18 @@ export default class Board extends Component {
     } else {
       this.getRandomNumber(arr, group)
     }
+  }
+
+  setFreeSpace = () => {
+    let copyGameCards = this.state.gameCards
+    let copySelectedCards = this.state.selectedCards
+    copyGameCards.N[2] = 'FREE'
+    copySelectedCards.push(copyGameCards.N[2])
+    this.setState({ gameCards: copyGameCards, selectedCards: copySelectedCards })
+  }
+
+  checkFreeSpace = () => {
+    
   }
 
   isSelected = (e, item) => {

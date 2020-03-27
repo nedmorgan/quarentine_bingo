@@ -4,6 +4,7 @@ export const ResetContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   padding-bottom: 1em;
+  padding-top: 0.5em;
 
   .myButton {
     box-shadow: 0px 2px 0px 2px #9fb4f2;
@@ -38,5 +39,6 @@ export const ResetContainer = styled.div`
     width: 100vw;
     padding-bottom: 1em;
     position: inherit;
+    padding-top: 0;
   }
 `
