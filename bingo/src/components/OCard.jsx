@@ -8,14 +8,23 @@ export default class OCard extends Component {
   render() {
     return (
       <CardContainer>
-        <div>
+        <div className='title-card-letter'>
           <h1>O</h1>
         </div>
         <div className='card'>
           {this.props.displayNumbers ? (
             this.props.gameNumbers.map((num, i) => {
               return (
-                <div key={`O${i}`} onClick={e => this.props.selected(e, `O${i}`)} className={'game-square ' + (this.props.selectedCards.includes(`O${i}`) ? 'cover-square' : null)}>
+                <div
+                  key={`O${i}`}
+                  onClick={(e) => this.props.selected(e, `O${i}`)}
+                  className={
+                    'game-square ' +
+                    (this.props.selectedCards.includes(`O${i}`)
+                      ? 'cover-square'
+                      : null)
+                  }
+                >
                   {num}
                 </div>
               )

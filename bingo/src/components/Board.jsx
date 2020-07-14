@@ -7,11 +7,91 @@ import GCard from './GCard'
 import OCard from './OCard'
 import Reset from './Reset'
 
-const bNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
-const iNumbers = ['16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30']
-const nNumbers = ['31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45']
-const gNumbers = ['46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '60']
-const oNumbers = ['61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75']
+const bNumbers = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+]
+const iNumbers = [
+  '16',
+  '17',
+  '18',
+  '19',
+  '20',
+  '21',
+  '22',
+  '23',
+  '24',
+  '25',
+  '26',
+  '27',
+  '28',
+  '29',
+  '30',
+]
+const nNumbers = [
+  '31',
+  '32',
+  '33',
+  '34',
+  '35',
+  '36',
+  '37',
+  '38',
+  '39',
+  '40',
+  '41',
+  '42',
+  '43',
+  '44',
+  '45',
+]
+const gNumbers = [
+  '46',
+  '47',
+  '48',
+  '49',
+  '50',
+  '51',
+  '52',
+  '53',
+  '54',
+  '55',
+  '56',
+  '57',
+  '58',
+  '59',
+  '60',
+]
+const oNumbers = [
+  '61',
+  '62',
+  '63',
+  '64',
+  '65',
+  '66',
+  '67',
+  '68',
+  '69',
+  '70',
+  '71',
+  '72',
+  '73',
+  '74',
+  '75',
+]
 
 export default class Board extends Component {
   state = {
@@ -22,7 +102,7 @@ export default class Board extends Component {
     oGroup: oNumbers,
     gameCards: {},
     displayNumbers: false,
-    selectedCards: []
+    selectedCards: [],
   }
 
   async componentDidMount() {
@@ -56,7 +136,10 @@ export default class Board extends Component {
     let copySelectedCards = this.state.selectedCards
     copyGameCards.N[2] = 'FREE'
     copySelectedCards.push(copyGameCards.N[2])
-    this.setState({ gameCards: copyGameCards, selectedCards: copySelectedCards })
+    this.setState({
+      gameCards: copyGameCards,
+      selectedCards: copySelectedCards,
+    })
   }
 
   isSelected = (e, item) => {
@@ -66,7 +149,7 @@ export default class Board extends Component {
     this.setState({ selectedCards })
   }
 
-  resetGameBoard = e => {
+  resetGameBoard = (e) => {
     e.preventDefault()
     let resetNumbers = [...this.state.selectedCards]
     resetNumbers = []
@@ -77,13 +160,38 @@ export default class Board extends Component {
   render() {
     return (
       <div>
-        <h1 className='game-title'>CORONAVIRUS</h1>
+        <h1 className='game-title'>QUARANTINE</h1>
         <BoardContainer>
-          <BCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.B} selected={this.isSelected} selectedCards={this.state.selectedCards} />
-          <ICard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.I} selected={this.isSelected} selectedCards={this.state.selectedCards} />
-          <NCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.N} selected={this.isSelected} selectedCards={this.state.selectedCards} />
-          <GCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.G} selected={this.isSelected} selectedCards={this.state.selectedCards} />
-          <OCard displayNumbers={this.state.displayNumbers} gameNumbers={this.state.gameCards.O} selected={this.isSelected} selectedCards={this.state.selectedCards} />
+          <BCard
+            displayNumbers={this.state.displayNumbers}
+            gameNumbers={this.state.gameCards.B}
+            selected={this.isSelected}
+            selectedCards={this.state.selectedCards}
+          />
+          <ICard
+            displayNumbers={this.state.displayNumbers}
+            gameNumbers={this.state.gameCards.I}
+            selected={this.isSelected}
+            selectedCards={this.state.selectedCards}
+          />
+          <NCard
+            displayNumbers={this.state.displayNumbers}
+            gameNumbers={this.state.gameCards.N}
+            selected={this.isSelected}
+            selectedCards={this.state.selectedCards}
+          />
+          <GCard
+            displayNumbers={this.state.displayNumbers}
+            gameNumbers={this.state.gameCards.G}
+            selected={this.isSelected}
+            selectedCards={this.state.selectedCards}
+          />
+          <OCard
+            displayNumbers={this.state.displayNumbers}
+            gameNumbers={this.state.gameCards.O}
+            selected={this.isSelected}
+            selectedCards={this.state.selectedCards}
+          />
         </BoardContainer>
         <Reset resetGame={this.resetGameBoard} />
       </div>

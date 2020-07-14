@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const RulesContainer = styled.div`
   width: 300px;
   height: auto;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   margin-top: 7em;
 
   h2 {
