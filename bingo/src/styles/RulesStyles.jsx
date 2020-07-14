@@ -26,6 +26,9 @@ export const RulesContainer = styled.div`
     ol {
       padding-left: 2em;
       padding-right: 2em;
+      padding-bottom: 1em;
+      margin-bottom: 0;
+      background-color: #dedddd;
     }
 
     li {
