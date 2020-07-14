@@ -1,1 +1,1 @@
-# quarentine_bingo
+# quarantine_bingo
