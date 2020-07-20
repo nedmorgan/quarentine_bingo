@@ -6,6 +6,7 @@ import NCard from './NCard'
 import GCard from './GCard'
 import OCard from './OCard'
 import Reset from './Reset'
+import Winner from './Winner'
 
 const bNumbers = [
   '1',
@@ -161,46 +162,56 @@ export default class Board extends Component {
     let resetNumbers = [...this.state.selectedCards]
     resetNumbers = []
     this.setState({ selectedCards: resetNumbers, displayNumbers: false })
+    this.props.resetWinner()
+    this.props.resetGameMode()
     this.componentDidMount()
   }
 
   render() {
     return (
       <div>
-        <h1 className='game-title'>QUARANTINE</h1>
-        <BoardContainer>
-          <BCard
-            displayNumbers={this.state.displayNumbers}
-            gameNumbers={this.state.gameCards.B}
-            selected={this.isSelected}
-            selectedCards={this.state.selectedCards}
-          />
-          <ICard
-            displayNumbers={this.state.displayNumbers}
-            gameNumbers={this.state.gameCards.I}
-            selected={this.isSelected}
-            selectedCards={this.state.selectedCards}
-          />
-          <NCard
-            displayNumbers={this.state.displayNumbers}
-            gameNumbers={this.state.gameCards.N}
-            selected={this.isSelected}
-            selectedCards={this.state.selectedCards}
-          />
-          <GCard
-            displayNumbers={this.state.displayNumbers}
-            gameNumbers={this.state.gameCards.G}
-            selected={this.isSelected}
-            selectedCards={this.state.selectedCards}
-          />
-          <OCard
-            displayNumbers={this.state.displayNumbers}
-            gameNumbers={this.state.gameCards.O}
-            selected={this.isSelected}
-            selectedCards={this.state.selectedCards}
-          />
-        </BoardContainer>
-        <Reset resetGame={this.resetGameBoard} />
+        {this.props.haveYouWon ? (
+          <div>
+            <Winner resetWinner={this.props.resetWinner} />
+          </div>
+        ) : (
+          <div>
+            <h1 className='game-title'>QUARANTINE</h1>
+            <BoardContainer>
+              <BCard
+                displayNumbers={this.state.displayNumbers}
+                gameNumbers={this.state.gameCards.B}
+                selected={this.isSelected}
+                selectedCards={this.state.selectedCards}
+              />
+              <ICard
+                displayNumbers={this.state.displayNumbers}
+                gameNumbers={this.state.gameCards.I}
+                selected={this.isSelected}
+                selectedCards={this.state.selectedCards}
+              />
+              <NCard
+                displayNumbers={this.state.displayNumbers}
+                gameNumbers={this.state.gameCards.N}
+                selected={this.isSelected}
+                selectedCards={this.state.selectedCards}
+              />
+              <GCard
+                displayNumbers={this.state.displayNumbers}
+                gameNumbers={this.state.gameCards.G}
+                selected={this.isSelected}
+                selectedCards={this.state.selectedCards}
+              />
+              <OCard
+                displayNumbers={this.state.displayNumbers}
+                gameNumbers={this.state.gameCards.O}
+                selected={this.isSelected}
+                selectedCards={this.state.selectedCards}
+              />
+            </BoardContainer>
+            <Reset resetGame={this.resetGameBoard} />
+          </div>
+        )}
       </div>
     )
   }

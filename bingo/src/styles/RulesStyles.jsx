@@ -29,6 +29,10 @@ export const RulesContainer = styled.div`
     position: inherit;
     margin-top: 0;
 
+    h1 {
+      padding-bottom: 0;
+    }
+
     ol {
       padding-left: 2em;
       padding-right: 2em;

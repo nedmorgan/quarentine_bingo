@@ -56,6 +56,18 @@ export default class App extends Component {
     haveYouWon: false,
   }
 
+  resetWinner = () => {
+    let haveYouWon = this.state.haveYouWon
+    haveYouWon = false
+    this.setState({ haveYouWon })
+  }
+
+  resetGameMode = () => {
+    let currentGameMode = this.state.selectedGameMode
+    currentGameMode = ''
+    this.setState({ selectedGameMode: currentGameMode })
+  }
+
   getBoardState = (cards) => {
     let boardCards = cards
     this.setState({ selectedCards: boardCards })
@@ -114,14 +126,18 @@ export default class App extends Component {
           <GameModes
             selectedGameMode={this.state.selectedGameMode}
             setGameMode={this.setGameMode}
+            haveYouWon={this.state.haveYouWon}
           />
           <Board
             getBoardState={this.getBoardState}
             checkGameStatus={this.checkGameStatus}
+            resetWinner={this.resetWinner}
+            resetGameMode={this.resetGameMode}
             gamePlayModes={this.state.gamePlayModes}
             selectedGameMode={this.state.selectedGameMode}
+            haveYouWon={this.state.haveYouWon}
           />
-          <Rules />
+          <Rules haveYouWon={this.state.haveYouWon} />
         </div>
       </div>
     )
