@@ -56,6 +56,7 @@ export const GameModesContainer = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
+    background-color: #dedddd;
     margin-top: 0.5em;
     width: 100%;
 

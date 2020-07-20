@@ -22,6 +22,7 @@ export const RulesContainer = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
+    background-color: #dedddd;
     bottom: 0;
     width: auto;
     margin-left: 0;

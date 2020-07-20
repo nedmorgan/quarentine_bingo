@@ -9,6 +9,7 @@ export const BoardContainer = styled.div`
   justify-content: space-evenly;
 
   @media only screen and (max-width: 600px) {
+    background-color: #dedddd;
     height: auto;
     width: auto;
     margin-top: 0.5em;
