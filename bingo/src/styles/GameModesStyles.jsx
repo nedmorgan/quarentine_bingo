@@ -59,6 +59,10 @@ export const GameModesContainer = styled.div`
     margin-top: 0.5em;
     width: 100%;
 
+    .game-modes-title {
+      padding-bottom: 0.2em;
+    }
+
     .game-modes-div {
       display: flex;
       flex-direction: row;

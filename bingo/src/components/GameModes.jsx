@@ -36,7 +36,7 @@ export default class GameModes extends Component {
           </button>
           <button
             className={
-              this.props.selectedGameMode === 'blackout-mode'
+              this.props.selectedGameMode === 'blackout'
                 ? 'game-modes-btn button blackout-mode'
                 : 'game-modes-btn button'
             }
