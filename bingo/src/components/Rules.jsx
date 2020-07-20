@@ -18,7 +18,8 @@ export default class Rules extends Component {
               </li>
               <li>
                 Rules of the game are dictated by the BINGO Jefe. For example,
-                Blackout, One Row, X pattern.
+                Blackout, Five in a Row, X, or 4 Corners. Select the{' '}
+                <b>Game Mode</b> as dictated by the BINGO Jefe.
               </li>
               <li>
                 Once a number is called by the BINGO Jefe, click on the circle.

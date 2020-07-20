@@ -12,7 +12,6 @@ export const RulesContainer = styled.div`
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
-    padding-bottom: 0.5em;
     font-size: 1.75em;
     color: #484848;
   }
