@@ -10,10 +10,6 @@
   flex-direction: row-reverse;
 }
 
-.empty-div {
-  width: 300px;
-}
-
 .game-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;

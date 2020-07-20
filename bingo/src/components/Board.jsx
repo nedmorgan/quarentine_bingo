@@ -6,6 +6,7 @@ import NCard from './NCard'
 import GCard from './GCard'
 import OCard from './OCard'
 import Reset from './Reset'
+import GameModes from './GameModes'
 
 const bNumbers = [
   '1',
@@ -135,10 +136,8 @@ export default class Board extends Component {
     let copyGameCards = this.state.gameCards
     let copySelectedCards = this.state.selectedCards
     copyGameCards.N[2] = 'FREE'
-    copySelectedCards.push(copyGameCards.N[2])
     this.setState({
       gameCards: copyGameCards,
-      selectedCards: copySelectedCards,
     })
   }
 
@@ -147,6 +146,7 @@ export default class Board extends Component {
     let selectedCards = [...this.state.selectedCards]
     selectedCards.push(item)
     this.setState({ selectedCards })
+    this.props.getBoardState(selectedCards)
   }
 
   resetGameBoard = (e) => {

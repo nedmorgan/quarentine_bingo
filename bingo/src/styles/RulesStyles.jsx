@@ -6,9 +6,15 @@ export const RulesContainer = styled.div`
   font-family: 'Montserrat', sans-serif;
   margin-top: 7em;
 
-  h2 {
-    margin: 0;
-    text-decoration: underline;
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0.5em;
+    font-size: 1.75em;
+    color: #484848;
   }
 
   li {
