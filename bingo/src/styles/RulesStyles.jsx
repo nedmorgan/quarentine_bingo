@@ -4,7 +4,7 @@ export const RulesContainer = styled.div`
   width: 300px;
   height: auto;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 7em;
+  margin-top: 5em;
 
   h1 {
     font-family: 'Montserrat', sans-serif;

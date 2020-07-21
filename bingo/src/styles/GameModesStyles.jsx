@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const GameModesContainer = styled.div`
   width: 300px;
-  margin-top: 7em;
+  margin-top: 5em;
 
   .game-modes-div {
     display: flex;
