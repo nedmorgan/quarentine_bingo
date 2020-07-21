@@ -24,33 +24,7 @@ export default class App extends Component {
         ['B4', 'I3', 'N2', 'G1', 'O0'],
       ],
       x: ['B0', 'I1', 'N2', 'G3', 'O4', 'O0', 'G1', 'I3', 'B4'],
-      blackout: [
-        'B0',
-        'B1',
-        'B2',
-        'B3',
-        'B4',
-        'I0',
-        'I1',
-        'I2',
-        'I3',
-        'I4',
-        'N0',
-        'N1',
-        'N2',
-        'N3',
-        'N4',
-        'B0',
-        'G1',
-        'G2',
-        'G3',
-        'G4',
-        'O0',
-        'O1',
-        'O2',
-        'O3',
-        'O4',
-      ],
+      blackout: ['B0', 'B1', 'B2', 'B3', 'B4', 'I0', 'I1', 'I2', 'I3', 'I4', 'N0', 'N1', 'N2', 'N3', 'N4', 'B0', 'G1', 'G2', 'G3', 'G4', 'O0', 'O1', 'O2', 'O3', 'O4'],
       fourCorners: ['B0', 'B4', 'O0', 'O4'],
     },
     haveYouWon: false,
@@ -84,9 +58,7 @@ export default class App extends Component {
     let hasWon = false
     if (gameMode === 'five-mode') {
       for (let i = 0; i < winningSquares.line.length; i++) {
-        hasWon = await winningSquares.line[i].every((square) =>
-          selectedSquares.includes(square)
-        )
+        hasWon = await winningSquares.line[i].every((square) => selectedSquares.includes(square))
         this.setState((state) => {
           return { haveYouWon: hasWon }
         })
@@ -95,24 +67,18 @@ export default class App extends Component {
         }
       }
     } else if (gameMode === 'x-mode') {
-      hasWon = await winningSquares.x.every((square) =>
-        selectedSquares.includes(square)
-      )
+      hasWon = await winningSquares.x.every((square) => selectedSquares.includes(square))
       this.setState((state) => {
         return { haveYouWon: hasWon }
       })
     } else if (gameMode === 'blackout') {
-      hasWon = await winningSquares.blackout.every((square) =>
-        selectedSquares.includes(square)
-      )
+      hasWon = await winningSquares.blackout.every((square) => selectedSquares.includes(square))
       this.setState((state) => {
         return { haveYouWon: hasWon }
       })
     } else if (gameMode === 'four-mode') {
       console.log(`Checking for ${gameMode}`)
-      hasWon = await winningSquares.fourCorners.every((square) =>
-        selectedSquares.includes(square)
-      )
+      hasWon = await winningSquares.fourCorners.every((square) => selectedSquares.includes(square))
       this.setState((state) => {
         return { haveYouWon: hasWon }
       })
@@ -123,11 +89,7 @@ export default class App extends Component {
     return (
       <div className='App'>
         <div className='game-objects'>
-          <GameModes
-            selectedGameMode={this.state.selectedGameMode}
-            setGameMode={this.setGameMode}
-            haveYouWon={this.state.haveYouWon}
-          />
+          <GameModes selectedGameMode={this.state.selectedGameMode} setGameMode={this.setGameMode} haveYouWon={this.state.haveYouWon} />
           <Board
             getBoardState={this.getBoardState}
             checkGameStatus={this.checkGameStatus}

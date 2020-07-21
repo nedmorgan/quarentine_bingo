@@ -37,6 +37,7 @@ export const RulesContainer = styled.div`
       padding-left: 2em;
       padding-right: 2em;
       padding-bottom: 1em;
+      margin-top: 0;
       margin-bottom: 0;
       background-color: #dedddd;
     }
