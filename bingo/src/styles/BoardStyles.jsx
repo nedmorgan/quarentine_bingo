@@ -13,6 +13,7 @@ export const BoardContainer = styled.div`
     height: auto;
     width: auto;
     margin-top: 0.5em;
-    margin-bottom: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 0;
   }
 `

@@ -26,6 +26,10 @@
     height: 100%;
   }
 
+  .game-title {
+    padding-top: 0;
+  }
+
   .game-objects {
     flex-direction: column;
   }

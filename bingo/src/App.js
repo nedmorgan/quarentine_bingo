@@ -77,7 +77,6 @@ export default class App extends Component {
         return { haveYouWon: hasWon }
       })
     } else if (gameMode === 'four-mode') {
-      console.log(`Checking for ${gameMode}`)
       hasWon = await winningSquares.fourCorners.every((square) => selectedSquares.includes(square))
       this.setState((state) => {
         return { haveYouWon: hasWon }

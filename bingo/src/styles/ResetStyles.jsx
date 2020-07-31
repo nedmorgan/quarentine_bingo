@@ -37,5 +37,6 @@ export const ResetContainer = styled.div`
     padding-bottom: 1em;
     position: inherit;
     padding-top: 0;
+    background-color: #dedddd;
   }
 `
