@@ -100,7 +100,6 @@ export default class GameModes extends Component {
       let randomNumber = await Math.floor(Math.random() * arr.length)
       ballToPull = await numbers[randomNumber]
       arr.splice(randomNumber, 1)
-      console.log(`Bingo Balls: ${arr}`)
     }
     this.setState({
       bingoBall: ballToPull,
