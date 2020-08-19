@@ -3,6 +3,7 @@ import './App.css'
 import Board from './components/Board'
 import Rules from './components/Rules'
 import GameModes from './components/GameModes'
+import Footer from './components/Footer'
 
 export default class App extends Component {
   state = {
@@ -100,6 +101,7 @@ export default class App extends Component {
           />
           <Rules haveYouWon={this.state.haveYouWon} />
         </div>
+        <Footer haveYouWon={this.state.haveYouWon} />
       </div>
     )
   }
