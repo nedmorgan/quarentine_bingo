@@ -10,6 +10,7 @@ export const FooterContainer = styled.div`
 
   footer {
     margin-top: 0.75vw;
+    padding-bottom: 0.5em;
   }
 
   .text-container {
