@@ -25,6 +25,7 @@ export const FooterContainer = styled.div`
 
   a {
     text-decoration: none;
+    color: #ff5a5f;
   }
 
   a:hover {
