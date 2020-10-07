@@ -73,7 +73,8 @@ export const GameModesContainer = styled.div`
     width: 150px;
   }
 
-  .game-modes-btn:hover {
+  .game-modes-btn:hover,
+  .shuffle-btn:hover {
     background-color: #ff7e82;
     cursor: pointer;
   }
